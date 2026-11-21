@@ -1,110 +1,97 @@
 # CodeAlpha Python Programming Internship - Task 4: Basic Chatbot
 
-## 📝 Project Overview
-This repository contains a simple, interactive, rule-based **Basic Chatbot** developed in Python. The chatbot, named **AlphaBot**, operates in the command console. It recognizes and processes key user intents such as greetings, queries about its status or identity, requests for instructions, and commands to exit, returning randomized natural responses.
+<div align="center">
 
-## 🎯 Objective
-This project demonstrates string tokenization, case-insensitive string parsing, regular expression sanitization (removing punctuation marks to handle input varieties), conditional loops, and modular function architecture.
+![Python](https://img.shields.io/badge/Python-3.x-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Internship](https://img.shields.io/badge/Internship-CodeAlpha-FF6B6B?style=for-the-badge)
+![Status](https://img.shields.io/badge/Status-Completed-success?style=for-the-badge)
+![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)
+
+</div>
+
+## 📝 Project Overview
+This repository contains an interactive, rule-based **Basic Chatbot** CLI named **AlphaBot** developed in Python for the **CodeAlpha Python Programming Internship (Task 4)**. The chatbot understands natural user inputs such as greetings, inquiries regarding its identity and status, requests for guidance, and conversation exit commands, responding dynamically from curated response collections.
+
+---
+
+## 🎯 Task Objectives & Compliance
+- [x] **Recognizes Common Inputs**: Handles phrases like `"hello"`, `"how are you"`, `"what is your name"`, `"help"`, and `"bye"`.
+- [x] **Predefined Dynamic Responses**: Delivers friendly, randomized replies for each intent (e.g. `"Hi!"`, `"I'm fine, thanks!"`, `"Goodbye!"`).
+- [x] **Clean Loop Interaction**: Continuous dialogue loop until the user types `bye` or `exit`.
+- [x] **Key Concepts Implemented**: `if-elif` conditional trees, functions, loops, string cleaning/normalization, regex sanitization, input/output.
+
+---
+
+## 📸 Execution Preview
+Below is the verified running screenshot of the Basic Chatbot in terminal:
+
+<div align="center">
+
+![Basic Chatbot Execution Preview](screenshots/run_preview.png)
+
+</div>
 
 ---
 
 ## ✨ Features
-- **Punctuation & Capitalization Independence**: Cleans user inputs by stripping symbols (e.g. `!`, `?`, `.`) and standardizing case so queries like `"HELLO?!"`, `"hello"`, or `"Hey!"` all map to the greeting intent.
-- **Dynamic Dialogue Responses**: Selects responses randomly from lists of predefined sentences for each intent, avoiding robotic repetition.
-- **Continuous Session Loop**: Maintains a live session window that accepts user input continuously.
-- **Conversational Triggers Recognized**:
-  - `hello` / `hey` / `greetings`
-  - `hi`
-  - `how are you` / `how is it going`
-  - `what is your name` / `who are you`
-  - `help` / `commands`
-  - `bye` / `exit` (Closes connection)
-- **Robust Fallback Engine**: Returns friendly, varied responses when an input doesn't match any triggers.
+- **Punctuation & Case Normalization**: Strips punctuation characters (`!`, `?`, `.`, `,`) and converts to lowercase so variations like `"Hello!"`, `"HELLO??"`, or `"hey"` match seamlessly.
+- **Dynamic Dialogue Variability**: Uses `random.choice` across predefined sentence lists to ensure responses never sound stiff or monotonous.
+- **Graceful Fallback Mechanism**: Friendly responses when a query falls outside recognized keywords, guiding the user to valid phrases.
+- **Clean Session Termination**: Typing `bye`, `exit`, or pressing `Ctrl+C` cleanly finishes the chat session.
 
 ---
 
 ## 🛠️ Technologies Used
-- **Language**: Python 3
-- **Core Modules**: `re`, `random`
+- **Language**: Python 3.x
+- **Standard Libraries**: `re`, `random`, `sys`
+- **Dependencies**: None (100% built-in standard library)
 
 ---
 
-## 📂 Folder Structure
+## 📂 Repository Structure
 ```text
 CodeAlpha_BasicChatbot/
 │
-├── chatbot.py          # Core Chatbot Script (Execution Entrypoint)
-├── README.md           # Project Documentation
-└── screenshots/        # Directory containing sample run previews
+├── chatbot.py             # Main Chatbot Script
+├── README.md              # Project Documentation & Guide
+├── .gitignore             # Git Ignore File
+└── screenshots/
+    └── run_preview.png    # Terminal Running Screenshot
 ```
 
 ---
 
-## 🚀 Installation & Getting Started
+## 🚀 How to Run Locally
 
 ### Prerequisites
-- **Python**: Make sure Python 3.x is installed:
+- Python 3.8 or higher installed.
   ```bash
   python --version
   ```
 
-### Installation Steps
-1. Navigate to the chatbot project directory:
+### Step-by-Step Execution
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/pragna3101/CodeAlpha_BasicChatbot.git
+   ```
+2. **Navigate into the directory:**
    ```bash
    cd CodeAlpha_BasicChatbot
    ```
+3. **Run the chatbot:**
+   ```bash
+   python chatbot.py
+   ```
+4. **Example Interactions:**
+   - Type `hello` -> Bot greets you warmly.
+   - Type `how are you` -> Bot shares its operational status.
+   - Type `what is your name` -> Bot introduces itself as AlphaBot.
+   - Type `help` -> Bot shows sample conversational commands.
+   - Type `bye` -> Bot closes the session gracefully.
 
 ---
 
-## 🎮 How to Run
-Run the chatbot script from your terminal:
-```bash
-python chatbot.py
-```
-
----
-
-## 💬 Sample Conversation Log
-
-Here is a typical console interaction log:
-
-```text
-==================================================
-         WELCOME TO ALPHABOT ASSISTANT!          
-==================================================
-Type your message below. Enter 'help' for instructions.
-Type 'bye' or 'exit' to end the conversation.
---------------------------------------------------
-
-[AlphaBot]: Hello! I am ready to chat. What's on your mind?
-
-[You]: hello!
-[AlphaBot]: Hi there! How is your day going? How can I help?
-
-[You]: what is your name?
-[AlphaBot]: I am AlphaBot, your friendly CodeAlpha automated assistant!
-
-[You]: how are you doing today
-[AlphaBot]: Fantastic! Ready to chat and help you out. How are you doing today?
-
-[You]: tell me something about programming
-[AlphaBot]: I'm a basic chatbot and still learning. Try asking me for 'help'!
-
-[You]: help
-[AlphaBot]: Need help? You can say things like 'hello', 'who are you', 'how are you', or type 'bye' to exit.
-
-[You]: bye
-[AlphaBot]: Goodbye! It was a pleasure chatting with you. Have a great day!
-
-==================================================
-              CHAT SESSION ENDED                 
-==================================================
-```
-
----
-
-## 📈 Future Improvements
-- **Natural Language Processing (NLP)**: Integrate modern libraries like `nltk`, `spaCy`, or `chatterbot` to identify intents semantically rather than relying on exact keyword matching.
-- **Graphical User Interface (GUI)**: Create a modern chat window using Python `tkinter` or build a web client using Streamlit or Flask.
-- **External Web APIs**: Integrate APIs to let the chatbot fetch real-world data like weather forecasts, stock prices, or news summaries.
-- **Context Management**: Introduce state memory so the chatbot remembers statements across multiple lines of input (e.g., remembering the user's name).
+## 👤 Author
+- **Pragna Zala**
+- **GitHub**: [@pragna3101](https://github.com/pragna3101)
+- **Internship**: CodeAlpha Python Programming Intern
